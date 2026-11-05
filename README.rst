@@ -6,7 +6,7 @@ To access a computing environment created by `Binder <http://mybinder.org>`_
 using the SageMath kernel, click on this badge
 
 .. image:: https://mybinder.org/badge_logo.svg
- :target: https://mybinder.org/v2/gh/sagemath/sage-binder-env/master
+ :target: https://mybinder.org/v2/gh/hgustafsson/sage-binder-env/master
 
 
 An example Binder repo for SageMath
@@ -37,7 +37,7 @@ standard Sage installation, though not *everything*. In particular, optional Sag
 SPKGs and other system software packages are not included.
 
 
-Authors
+Upstream Authors
 -------
 
 Nicolas M. Thiéry, E. Madison Bray, and Kwankyu Lee
