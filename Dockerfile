@@ -35,6 +35,10 @@ COPY --chown=${NB_USER}:${NB_USER} notebooks/* ${HOME}/
 # Switch to the user
 USER ${NB_USER}
 
+# Install JupyterLab extensions into Sage's Python environment
+RUN /usr/bin/sage -sh -c 'python -m pip install --no-cache-dir jupyter-offlinenotebook jupyterlab-filesystem-access'
+
+
 RUN mkdir -p $(/usr/bin/sage -sh -c 'jupyter --data-dir')/kernels && \
     ln -sf $(/usr/bin/sage -sh -c 'echo $SAGE_VENV')/share/jupyter/kernels/sagemath $(/usr/bin/sage -sh -c 'jupyter --data-dir')/kernels/sagemath
 
