@@ -57,3 +57,9 @@ logging.getLogger('LabApp').addFilter(NoNodeJSWarningFilter())\n\
 # Install JupyterLab extensions into Sage's Python environment
 RUN /usr/bin/sage -sh -c 'python -m pip install --no-cache-dir jupyter-offlinenotebook jupyterlab-filesystem-access nbgitpuller'
 
+# Install Git for nbgitpuller
+USER root
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends git && \
+    rm -rf /var/lib/apt/lists/*
+USER ${NB_USER}
