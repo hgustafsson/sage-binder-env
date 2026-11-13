@@ -63,3 +63,4 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends git && \
     rm -rf /var/lib/apt/lists/*
 USER ${NB_USER}
+ENV PYTHONPATH="/home/jovyan/crypto-assignments:${PYTHONPATH}"
